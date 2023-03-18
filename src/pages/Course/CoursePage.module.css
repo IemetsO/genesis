@@ -1,0 +1,38 @@
+.list{
+    list-style-type: none;
+    text-align: left;
+    
+}
+
+.container{
+    margin-top: 60px;
+    margin-left: 60px;
+    
+  
+}
+
+.title{
+    color: black;
+    text-align: left;
+}
+
+.description{
+    color: black;
+    text-align: left;
+}
+
+.button{
+    border: none;
+    background-color: azure;
+    color: blue;
+}
+
+.locked{
+    border: none;
+    background-color: azure;
+    color: coral;
+}
+
+.lesson{
+    text-align: left;
+}
