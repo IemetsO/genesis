@@ -13,6 +13,7 @@ import {
   Button,
   CardActions,
   Typography,
+  Grid
 } from "@mui/material";
 import s from "./HomePage.module.css";
 import { useNavigate } from "react-router-dom";
@@ -23,7 +24,7 @@ const HomePage = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  let perPage = 3;
+  let perPage = 10;
   let pageAmount;
 
   useEffect(() => {
@@ -61,11 +62,12 @@ const HomePage = () => {
         </div>
       ) : (
         <Container className={s.container}>
-          <Stack direction="row" spacing={4}>
+          <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
             {allCourses.courses?.length > 0 &&
               coursesPerPage?.map((e) => {
                 return (
-                  <Card sx={{ maxWidth: 500, minWidth: 300 }} key={e.id}>
+                    <Grid item xs={2} sm={4} md={4} key={e.id}>
+                  <Card sx={{ maxWidth: 500, minWidth: 300 }} className = {s.cards}>
                     {" "}
                     <CardContent>
                       <Typography sx={{ fontSize: 24 }} gutterBottom>
@@ -108,9 +110,10 @@ const HomePage = () => {
                       </Button>
                     </CardActions>
                   </Card>
+                  </Grid>
                 );
               })}
-          </Stack>
+          </Grid>
           {pageAmount > 0 && (
             <Pagination
               className={s.pagination}
