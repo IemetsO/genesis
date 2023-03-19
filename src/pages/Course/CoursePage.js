@@ -22,7 +22,6 @@ const CoursePage = () => {
   }, [dispatch, location.pathname]);
 
   const course = useSelector(selectCourse);
- 
 
   const playerRef = React.useRef();
 
@@ -32,11 +31,9 @@ const CoursePage = () => {
   }, [played]);
 
   if (course.lessons && url === "") {
-    let firstLesson;
-    firstLesson = course?.lessons?.find((e) => e?.order === 1);
+    let firstLesson = course?.lessons?.find((e) => e?.order === 1);
     setUrl(firstLesson?.link);
     setLesson(firstLesson);
-    
   }
 
   function handleClickButton(id) {
