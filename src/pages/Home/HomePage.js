@@ -6,7 +6,6 @@ import { selectAllCourses } from "../../redux/courses/selectors";
 import {
   Container,
   Pagination,
-  Stack,
   Card,
   CardContent,
   CardMedia,
